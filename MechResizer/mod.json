@@ -1,0 +1,19 @@
+﻿{
+  "Name": "MechResizer",
+  "Enabled": true,
+
+  "Version": "0.1.0",
+
+  "Author": "janxious",
+  "Website": "https://github.com/janxious/MechResizer",
+
+  "DLL": "MechResizer.dll",
+  "DLLEntryPoint": "MechResizer.MechResizer.Init",
+  "DependsOn": [],
+  "ConflictsWith": [],
+
+  "Settings": {
+    "mechSizeMultipliers": {
+    }
+  }
+}
