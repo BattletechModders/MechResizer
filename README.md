@@ -27,6 +27,15 @@ Note: neither of those is set with any values by default, so you won't see a cha
 
 ## Screenshots
 
+Big Locust
+
+<img width="885" alt="screen shot 2018-05-22 at 2 08 16 pm" src="https://user-images.githubusercontent.com/50124/40382747-306be6b8-5dcd-11e8-8956-078891fd6722.png">
+
+Big Everythings
+
+<img width="973" alt="screen shot 2018-05-22 at 2 26 07 pm" src="https://user-images.githubusercontent.com/50124/40382748-30800814-5dcd-11e8-8de0-f1943be2af53.png">
+
+
 ## Special Thanks
 
 HBS, @Mpstark, @Morphyum
