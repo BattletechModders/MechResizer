@@ -5,7 +5,7 @@ BattleTech Mod (using [BTML](https://github.com/Mpstark/BattleTechModLoader) and
 Change the size of mechs on a per-chasis basis. Always wanted a 200 meter tall Locust? Now you can!
 
 ## Features
-* change the default size of all mechs in game without json modification.
+* change the default size of all mechs in game without vanilla json modification.
 * change the size of any chassis in game 
 
 ## Download
@@ -24,6 +24,8 @@ Setting | Type | Default | Description
 `defaultMechScaleMultiplier` | float | -1 | defaults to whatever it set in `TEST_MechScaleMultiplier` (vanilla is 1.25). override this to globally change all mechs
 
 Note: neither of those is set with any values by default, so you won't see a change in game unless you change them.
+
+## Screenshots
 
 ## Special Thanks
 
