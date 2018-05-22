@@ -36,6 +36,34 @@ Big Everythings
 <img width="973" alt="screen shot 2018-05-22 at 2 26 07 pm" src="https://user-images.githubusercontent.com/50124/40382748-30800814-5dcd-11e8-8de0-f1943be2af53.png">
 
 
+## Sample Config
+
+Big Locust, tiny everything else.
+
+```
+{
+  "Name": "MechResizer",
+  "Enabled": true,
+
+  "Version": "0.1.0",
+
+  "Author": "janxious",
+  "Website": "https://github.com/janxious/MechResizer",
+
+  "DLL": "MechResizer.dll",
+  "DLLEntryPoint": "MechResizer.MechResizer.Init",
+  "DependsOn": [],
+  "ConflictsWith": [],
+
+  "Settings": {
+    "defaultMechSizeMultiplier": 0.25,
+    "mechSizeMultipliers": {
+      "chassisdef_locust_LCT-1V": 15
+    }
+  }
+}
+```
+
 ## Special Thanks
 
 HBS, @Mpstark, @Morphyum
