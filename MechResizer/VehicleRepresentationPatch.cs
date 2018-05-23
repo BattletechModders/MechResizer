@@ -19,8 +19,7 @@ namespace MechResizer
                 var settingFromJSON = vehicle.Combat.Constants.CombatValueMultipliers.TEST_MechScaleMultiplier;
                 ModSettings.DefaultVehicleSizeMultiplier = settingFromJSON;
             }
-
-            Vector3 vehicleSizeMultiplier = ModSettings.VehicleSizeMultiplier(vehicle.PilotableActorDef.ChassisID);
+            Vector3 vehicleSizeMultiplier = ModSettings.VehicleSizeMultiplier(vehicle.VehicleDef.ChassisID);
             Traverse.Create(__instance.thisTransform).Property("localScale").SetValue(vehicleSizeMultiplier);
         }
     }

@@ -9,16 +9,11 @@ namespace MechResizer
     {
         #region mech
 
-        private Vector3 DefaultMechSizeMultiplierVector3;
         public float defaultMechSizeMultiplier = -1f;
         public float DefaultMechSizeMultiplier
         {
             get => defaultMechSizeMultiplier;
-            set
-            {
-                defaultMechSizeMultiplier = value;
-                DefaultMechSizeMultiplierVector3 = new Vector3(value, value, value);
-            }
+            set => defaultMechSizeMultiplier = value;
         }
 
         public Dictionary<string, float[]> mechSizeMultipliers { private get; set; }
@@ -26,7 +21,7 @@ namespace MechResizer
         {
             return mechSizeMultipliers.TryGetValue(mechIdentifier, out var t)
                 ? new Vector3(t[0], t[1], t[2])
-                : DefaultMechSizeMultiplierVector3;
+                : new Vector3(defaultMechSizeMultiplier, defaultMechSizeMultiplier, defaultMechSizeMultiplier);
         }
 
         #endregion
@@ -34,16 +29,11 @@ namespace MechResizer
         
         #region vehicle
 
-        private Vector3 DefaultVehicleSizeMultiplierVector3;
         public float defaultVehicleSizeMultiplier = -1f;
         public float DefaultVehicleSizeMultiplier
         {
-            get => defaultVehicleSizeMultiplier;
-            set
-            {
-                defaultVehicleSizeMultiplier = value;
-                DefaultVehicleSizeMultiplierVector3 = new Vector3(value, value, value);
-            }
+            get => DefaultVehicleSizeMultiplier;
+            set => defaultVehicleSizeMultiplier = value;
         }
 
         public Dictionary<string, float[]> vehicleSizeMultipliers { private get; set; }
@@ -51,7 +41,7 @@ namespace MechResizer
         {
             return vehicleSizeMultipliers.TryGetValue(vehicleIdentifier, out var t)
                 ? new Vector3(t[0], t[1], t[2])
-                : DefaultVehicleSizeMultiplierVector3;
+                : new Vector3(defaultVehicleSizeMultiplier, defaultVehicleSizeMultiplier, defaultVehicleSizeMultiplier);
         }
 
         #endregion
