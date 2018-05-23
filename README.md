@@ -6,7 +6,9 @@ Change the size of mechs on a per-chasis basis. Always wanted a 200 meter tall L
 
 ## Features
 * change the default size of all mechs in game without vanilla json modification.
-* change the size of any chassis in game 
+* change the size of any specific mech (based on chassis) in game
+* change the default size of all vehicles in game
+* change the size of any specific vehicle (based on chassis) in game
 
 ## Download
 Downloads can be found on [Github](https://github.com/janxious/MechResizer/releases).
@@ -20,10 +22,12 @@ Downloads can be found on [Github](https://github.com/janxious/MechResizer/relea
 ## Settings
 Setting | Type | Default | Description
 --- | --- | --- | ---
-`mechResizeMultipliers` | `json hash` | {} | change the size of mechs using the format `"chassis string" : multiplier float`. A big locust would be like `"chassisdef_locust_LCT-1V": 15`
-`defaultMechScaleMultiplier` | float | -1 | defaults to whatever it set in `TEST_MechScaleMultiplier` (vanilla is 1.25). override this to globally change all mechs
+`mechResizeMultipliers` | json hash | {} | change the size of mechs using the format `"chassis string" : multiplier [float, float, float]`. A big locust would be like `"chassisdef_locust_LCT-1V": [15, 15, 15]`
+`defaultMechSizeMultiplier` | float | 0.9 | override this to globally change all mechs size in combat. Vanilla is 1.25
+`vehicleResizeMultipliers` | json hash | {} | change the size of vehicles using the format `"chassis string" : multiplier [float, float, float]`. A big APC would be like `"vehiclechassisdef_APC_Wheeled": [3, 3, 3]`
+`defaultVehicleSizeMultiplier` | float | 1 | override this to globally change all mechs size in combat. Vanilla is 1
 
-Note: neither of those is set with any values by default, so you won't see a change in game unless you change them.
+The floats passed for sizing are AFAICT in this order: [<x> - width (shoulder to shoulder), <y> - height (toes to head), <z> - depth (chest to back)]
 
 ## Screenshots
 
@@ -38,14 +42,14 @@ Big Everythings
 
 ## Sample Config
 
-Big Locust, tiny everything else.
+Big Locust, Big APC, tiny everything else.
 
 ```
 {
   "Name": "MechResizer",
   "Enabled": true,
 
-  "Version": "0.1.0",
+  "Version": "0.2.0",
 
   "Author": "janxious",
   "Website": "https://github.com/janxious/MechResizer",
@@ -59,6 +63,10 @@ Big Locust, tiny everything else.
     "defaultMechSizeMultiplier": 0.25,
     "mechSizeMultipliers": {
       "chassisdef_locust_LCT-1V": 15
+    },
+    "defaultVehicleSizeMultiplier": 0.25,
+    "vehicleSizeMultipliers": {
+      "vehiclechassisdef_APC_Wheeled": [4, 4, 4]
     }
   }
 }
