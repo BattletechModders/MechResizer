@@ -62,7 +62,7 @@ Big Locust, Big APC, tiny everything else.
   "Settings": {
     "defaultMechSizeMultiplier": 0.25,
     "mechSizeMultipliers": {
-      "chassisdef_locust_LCT-1V": 15
+      "chassisdef_locust_LCT-1V": [15, 15, 15]
     },
     "defaultVehicleSizeMultiplier": 0.25,
     "vehicleSizeMultipliers": {
