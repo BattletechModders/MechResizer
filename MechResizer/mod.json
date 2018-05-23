@@ -2,7 +2,7 @@
   "Name": "MechResizer",
   "Enabled": true,
 
-  "Version": "0.1.0",
+  "Version": "0.2.0",
 
   "Author": "janxious",
   "Website": "https://github.com/janxious/MechResizer",
@@ -13,7 +13,9 @@
   "ConflictsWith": [],
 
   "Settings": {
-    "mechSizeMultipliers": {
-    }
+    "defaultMechSizeMultiplier": 0.9,
+    "mechSizeMultipliers": {},
+    "defaultVehicleSizeMultiplier": 1,
+    "vehicleSizeMultipliers": {}
   }
 }

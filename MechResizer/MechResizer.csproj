@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logger.cs" />
+    <Compile Include="VehicleRepresentationPatch.cs" />
     <Compile Include="MechRepresentationPatch.cs" />
     <Compile Include="MechResizer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

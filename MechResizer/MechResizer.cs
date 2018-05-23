@@ -9,6 +9,7 @@ namespace MechResizer
     {
         internal static Settings ModSettings = new Settings();
         internal static string ModDirectory;
+
         public static void Init(string directory, string settingsJSON)
         {
             var harmony = HarmonyInstance.Create("com.joelmeador.MechResizer");
