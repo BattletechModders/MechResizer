@@ -7,43 +7,39 @@ namespace MechResizer
     // into the C# variables used by the mod.
     public class Settings
     {
-        #region mech
-
+        #region mech settings
         public float defaultMechSizeMultiplier = -1f;
-        public float DefaultMechSizeMultiplier
-        {
-            get => defaultMechSizeMultiplier;
+        public float DefaultMechSizeMultiplier { 
             set => defaultMechSizeMultiplier = value;
+            get => defaultMechSizeMultiplier;
         }
 
-        public Dictionary<string, float[]> mechSizeMultipliers { private get; set; }
+        public Dictionary<string, float> mechSizeMultipliers { private get; set; }
+        public Dictionary<string, Vector3> mechSizeMultiplierVectors { private get; set; }
         public Vector3 MechSizeMultiplier(string mechIdentifier)
         {
-            return mechSizeMultipliers.TryGetValue(mechIdentifier, out var t)
-                ? new Vector3(t[0], t[1], t[2])
-                : new Vector3(defaultMechSizeMultiplier, defaultMechSizeMultiplier, defaultMechSizeMultiplier);
+            return mechSizeMultiplierVectors.TryGetValue(mechIdentifier, out var mVector) ? mVector :
+                mechSizeMultipliers.TryGetValue(mechIdentifier, out var mSimple) ? new Vector3(mSimple, mSimple, mSimple) :
+                new Vector3(defaultMechSizeMultiplier, defaultMechSizeMultiplier, defaultMechSizeMultiplier);
         }
-
         #endregion
-
         
-        #region vehicle
-
+        #region vehicle settings
         public float defaultVehicleSizeMultiplier = -1f;
         public float DefaultVehicleSizeMultiplier
         {
-            get => DefaultVehicleSizeMultiplier;
             set => defaultVehicleSizeMultiplier = value;
+            get => defaultVehicleSizeMultiplier;
         }
 
-        public Dictionary<string, float[]> vehicleSizeMultipliers { private get; set; }
+        public Dictionary<string, float> vehicleSizeMultipliers { private get; set; }
+        public Dictionary<string, Vector3> vehicleSizeMultiplierVectors { private get; set; }
         public Vector3 VehicleSizeMultiplier(string vehicleIdentifier)
         {
-            return vehicleSizeMultipliers.TryGetValue(vehicleIdentifier, out var t)
-                ? new Vector3(t[0], t[1], t[2])
-                : new Vector3(defaultVehicleSizeMultiplier, defaultVehicleSizeMultiplier, defaultVehicleSizeMultiplier);
+            return vehicleSizeMultiplierVectors.TryGetValue(vehicleIdentifier, out var mVector) ? mVector :
+                vehicleSizeMultipliers.TryGetValue(vehicleIdentifier, out var mSimple) ? new Vector3(mSimple, mSimple, mSimple) :
+                new Vector3(defaultVehicleSizeMultiplier, defaultVehicleSizeMultiplier, defaultVehicleSizeMultiplier);
         }
-
         #endregion
     }
 }

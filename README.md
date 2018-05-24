@@ -22,12 +22,14 @@ Downloads can be found on [Github](https://github.com/janxious/MechResizer/relea
 ## Settings
 Setting | Type | Default | Description
 --- | --- | --- | ---
-`mechResizeMultipliers` | json hash | {} | change the size of mechs using the format `"chassis string" : multiplier [float, float, float]`. A big locust would be like `"chassisdef_locust_LCT-1V": [15, 15, 15]`
-`defaultMechSizeMultiplier` | float | 0.9 | override this to globally change all mechs size in combat. Vanilla is 1.25
-`vehicleResizeMultipliers` | json hash | {} | change the size of vehicles using the format `"chassis string" : multiplier [float, float, float]`. A big APC would be like `"vehiclechassisdef_APC_Wheeled": [3, 3, 3]`
-`defaultVehicleSizeMultiplier` | float | 1 | override this to globally change all mechs size in combat. Vanilla is 1
+`mechResizeMultipliers` | json hash | {} | change the size of mechs using the format `"chassis string" : multiplier`. A big locust would be like `"chassisdef_locust_LCT-1V": 15`
+`mechResizeMultiplierVectors` | json hash | {} | change mech sizes using three dimensional multipliers with format ``"chassis string": { "x": Xmulti, "y": Ymulti, "z": Zmulti }``. A very tall locust might look like `"chassisdef_locust_LCT-1V": {"x": 1,"y": 2, "z": 1}``
+`defaultMechSizeMultiplier` | float | 0.9 | override this to globally change all mech sizes in combat. Vanilla is 1.25
+`vehicleResizeMultipliers` | json hash | {} | change the size of vehicles using the format `"chassis string" : multiplier`. A big APC would be like `"vehiclechassisdef_APC_Wheeled": 3`
+`mechResizeMultiplierVectors` | json hash | {} | change vehicle sizes using three dimensional multipliers with format ``"chassis string": { "x": Xmulti, "y": Ymulti, "z": Zmulti }``. A very long APC might look like `"vehiclechassisdef_APC_Wheeled": {"x": 1,"y": 1, "z": 2}``
+`defaultVehicleSizeMultiplier` | float | 1 | override this to globally change all vehicle sizes in combat. Vanilla is 1
 
-The floats passed for sizing are AFAICT in this order: [<x> - width (shoulder to shoulder), <y> - height (toes to head), <z> - depth (chest to back)]
+The dimensions for the `*Vectors` settings are measured like: <x> - width (shoulder to shoulder), <y> - height (toes to head), <z> - depth (chest to back)
 
 ## Screenshots
 
@@ -42,14 +44,14 @@ Big Everythings
 
 ## Sample Config
 
-Big Locust, Big APC, tiny everything else.
+Normal vehicles size, smaller than vanilla mechs, slenderman griffin, giganto thunderbolt, weirdly stretched galleon, giganto striker.
 
 ```
 {
   "Name": "MechResizer",
   "Enabled": true,
 
-  "Version": "0.2.0",
+  "Version": "0.3.0",
 
   "Author": "janxious",
   "Website": "https://github.com/janxious/MechResizer",
@@ -60,13 +62,20 @@ Big Locust, Big APC, tiny everything else.
   "ConflictsWith": [],
 
   "Settings": {
-    "defaultMechSizeMultiplier": 0.25,
+    "defaultMechSizeMultiplier": 0.9,
     "mechSizeMultipliers": {
-      "chassisdef_locust_LCT-1V": [15, 15, 15]
+      "chassisdef_thunderbolt_TDR-5SE": 4
     },
-    "defaultVehicleSizeMultiplier": 0.25,
+    "mechSizeMultiplierVectors": {
+      "chassisdef_griffin_GRF-1N": { "x": 1, "y": 2, "z": 1 }
+    },
+
+    "defaultVehicleSizeMultiplier": 1,
     "vehicleSizeMultipliers": {
-      "vehiclechassisdef_APC_Wheeled": [4, 4, 4]
+      "vehiclechassisdef_STRIKER": 4
+    },
+    "vehicleSizeMultiplierVectors": {
+      "vehiclechassisdef_GALLEON": { "x": 2, "y": 4, "z": 2 }
     }
   }
 }

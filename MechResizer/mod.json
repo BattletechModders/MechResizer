@@ -15,7 +15,10 @@
   "Settings": {
     "defaultMechSizeMultiplier": 0.9,
     "mechSizeMultipliers": {},
+    "mechSizeMultiplierVectors": {},
+
     "defaultVehicleSizeMultiplier": 1,
-    "vehicleSizeMultipliers": {}
+    "vehicleSizeMultipliers": {},
+    "vehicleSizeMultiplierVectors": {}
   }
 }

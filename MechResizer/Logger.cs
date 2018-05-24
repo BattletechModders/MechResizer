@@ -29,9 +29,7 @@ namespace MechResizer
         private static void WriteLogFooter(StreamWriter writer)
         {
             writer.WriteLine($"Date: {DateTime.Now}");
-            writer.WriteLine();
             writer.WriteLine(new string(c: '-', count: 50));
-            writer.WriteLine();
         }
     }
 }
