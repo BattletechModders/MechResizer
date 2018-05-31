@@ -19,6 +19,10 @@
 
     "defaultVehicleSizeMultiplier": 1,
     "vehicleSizeMultipliers": {},
-    "vehicleSizeMultiplierVectors": {}
+    "vehicleSizeMultiplierVectors": {},
+
+    "defaultProjectileSizeMultiplier": 1,
+    "projectileSizeMultipliers": {},
+    "projectileSizeMultiplierVectors": {}
   }
 }

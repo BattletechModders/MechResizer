@@ -23,7 +23,7 @@ namespace MechResizer
                 new Vector3(defaultMechSizeMultiplier, defaultMechSizeMultiplier, defaultMechSizeMultiplier);
         }
         #endregion
-        
+
         #region vehicle settings
         public float defaultVehicleSizeMultiplier = -1f;
         public float DefaultVehicleSizeMultiplier
@@ -39,6 +39,24 @@ namespace MechResizer
             return vehicleSizeMultiplierVectors.TryGetValue(vehicleIdentifier, out var mVector) ? mVector :
                 vehicleSizeMultipliers.TryGetValue(vehicleIdentifier, out var mSimple) ? new Vector3(mSimple, mSimple, mSimple) :
                 new Vector3(defaultVehicleSizeMultiplier, defaultVehicleSizeMultiplier, defaultVehicleSizeMultiplier);
+        }
+        #endregion
+
+        #region projectile settings
+        public float defaultProjectileSizeMultiplier = -1f;
+        public float DefaultProjectileSizeMultiplier
+        {
+            set => defaultProjectileSizeMultiplier = value;
+            get => defaultProjectileSizeMultiplier;
+        }
+
+        public Dictionary<string, float> projectileSizeMultipliers { private get; set; }
+        public Dictionary<string, Vector3> projectileSizeMultiplierVectors { private get; set; }
+        public Vector3 ProjectileSizeMultiplier(string firingWeaponIdentifier)
+        {
+            return projectileSizeMultiplierVectors.TryGetValue(firingWeaponIdentifier, out var mVector) ? mVector :
+                projectileSizeMultipliers.TryGetValue(firingWeaponIdentifier, out var mSimple) ? new Vector3(mSimple, mSimple, mSimple) :
+                new Vector3(defaultProjectileSizeMultiplier, defaultProjectileSizeMultiplier, defaultProjectileSizeMultiplier);
         }
         #endregion
     }
