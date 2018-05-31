@@ -16,7 +16,6 @@ namespace MechResizer
                 ModSettings.DefaultMechSizeMultiplier = settingFromJSON;
             }
             var projectileSizeMultiplier = ModSettings.ProjectileSizeMultiplier(__instance.weapon.Description.Id);
-            Logger.LogLine($"x:{projectileSizeMultiplier.x},y:{projectileSizeMultiplier.y},z:{projectileSizeMultiplier.z}");
             var ogTransform = Traverse.Create(__instance).Field("projectileTransform").GetValue<Transform>();
             ogTransform.localScale = projectileSizeMultiplier;
             Traverse.Create(__instance).Field("projectileTransform").SetValue(ogTransform);
