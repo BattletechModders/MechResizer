@@ -59,5 +59,9 @@ namespace MechResizer
                 new Vector3(defaultProjectileSizeMultiplier, defaultProjectileSizeMultiplier, defaultProjectileSizeMultiplier);
         }
         #endregion
+
+        #region debug settings
+        public bool debug = false;
+        #endregion
     }
 }

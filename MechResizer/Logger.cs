@@ -5,7 +5,7 @@ namespace MechResizer
 {
     public class Logger
     {
-        public static void LogError(Exception ex)
+        public static void Error(Exception ex)
         {
             var filePath = $"{MechResizer.ModDirectory}/MechResizer.log";
             using (var writer = new StreamWriter(filePath, true))
@@ -16,8 +16,9 @@ namespace MechResizer
             }
         }
 
-        public static void LogLine(String line)
+        public static void Debug(String line)
         {
+            if (!MechResizer.ModSettings.debug) { return; }
             var filePath = $"{MechResizer.ModDirectory}/MechResizer.log";
             using (var writer = new StreamWriter(filePath, true))
             {

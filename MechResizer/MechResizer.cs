@@ -22,7 +22,7 @@ namespace MechResizer
             }
             catch (Exception ex)
             {
-                Logger.LogError(ex);
+                Logger.Error(ex);
                 ModSettings = new Settings();
             }
         }

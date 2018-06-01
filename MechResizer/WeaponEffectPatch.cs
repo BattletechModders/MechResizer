@@ -28,10 +28,10 @@ namespace MechResizer
 //    {
 //        static bool Prefix(WeaponEffect __instance)
 //        {
-//            Logger.LogLine("my boyfriend don't need em");
+//            Logger.Debug("my boyfriend don't need em");
 //            if (__instance.muzzleFlashVFXPrefab != null)
 //            {
-//                Logger.LogLine("woo?");
+//                Logger.Debug("woo?");
 //                GameObject gameObject = __instance.weapon.parent.Combat.DataManager.PooledInstantiate(__instance.muzzleFlashVFXPrefab.name, BattleTechResourceType.Prefab, null, null, null);
 //                ParticleSystem component = gameObject.GetComponent<ParticleSystem>();
 //                AutoPoolObject autoPoolObject = gameObject.GetComponent<AutoPoolObject>();
@@ -62,7 +62,7 @@ namespace MechResizer
 //            return false;
 ////            if (__instance.muzzleFlashVFXPrefab != null)
 ////            {
-////                Logger.LogLine("woo?");
+////                Logger.Debug("woo?");
 ////                var ogTransform = Traverse.Create(__instance).Field("projectileTransform").GetValue<Transform>();
 ////                ogTransform.localScale = new Vector3(100f,100f,100f);
 ////                Traverse.Create(__instance).Field("projectileTransform").SetValue(ogTransform);
