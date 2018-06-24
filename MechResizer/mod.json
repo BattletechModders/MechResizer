@@ -13,6 +13,7 @@
   "ConflictsWith": [],
 
   "Settings": {
+    "debug": false,
     "defaultMechSizeMultiplier": 0.9,
     "mechSizeMultipliers": {},
     "mechSizeMultiplierVectors": {},
