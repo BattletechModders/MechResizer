@@ -9,18 +9,28 @@ namespace MechResizer
     public static class GameRepresentationInitPatch
     {
         static void Postfix(
-            ref Vehicle vehicle,
-            ref Transform parentTransform,
-            ref bool isParented,
+            Vehicle vehicle,
+            Transform parentTransform,
+            bool isParented,
             VehicleRepresentation __instance)
         {
+            Logger.Debug("vehicle size initialization ");
             if (ModSettings.DefaultVehicleSizeMultiplier == -1f)
             {
                 var settingFromJSON = vehicle.Combat.Constants.CombatValueMultipliers.TEST_MechScaleMultiplier;
                 ModSettings.DefaultVehicleSizeMultiplier = settingFromJSON;
+                Logger.Debug($"loaded default size for vehicle: {settingFromJSON}");
             }
-            Vector3 vehicleSizeMultiplier = ModSettings.VehicleSizeMultiplier(vehicle.VehicleDef.ChassisID);
-            Traverse.Create(__instance.thisTransform).Property("localScale").SetValue(vehicleSizeMultiplier);
+            var identifier = vehicle.VehicleDef.ChassisID;
+            var sizeMultiplier = ModSettings.VehicleSizeMultiplier(identifier);
+            Logger.Debug($"{identifier}: {sizeMultiplier}");
+            var originalLOSSourcePositions = Traverse.Create(vehicle).Field("originalLOSSourcePositions").GetValue<Vector3[]>();
+            var originalLOSTargetPositions = Traverse.Create(vehicle).Field("originalLOSTargetPositions").GetValue<Vector3[]>();
+            var newSourcePositions = ModSettings.LOSSourcePositions(identifier, originalLOSSourcePositions, sizeMultiplier);
+            var newTargetPositions = ModSettings.LOSTargetPositions(identifier, originalLOSTargetPositions, sizeMultiplier);
+            Traverse.Create(vehicle).Field("originalLOSSourcePositions").SetValue(newSourcePositions);
+            Traverse.Create(vehicle).Field("originalLOSTargetPositions").SetValue(newTargetPositions);
+            Traverse.Create(__instance.thisTransform).Property("localScale").SetValue(sizeMultiplier);
         }
     }
 }

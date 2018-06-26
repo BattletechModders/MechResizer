@@ -51,8 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractActorPatch.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="TurretRepresentationPatch.cs" />
     <Compile Include="VehicleRepresentationPatch.cs" />
     <Compile Include="MechRepresentationPatch.cs" />
     <Compile Include="MechResizer.cs" />

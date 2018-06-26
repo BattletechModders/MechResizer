@@ -2,7 +2,7 @@
   "Name": "MechResizer",
   "Enabled": true,
 
-  "Version": "0.3.0",
+  "Version": "0.5.0",
 
   "Author": "janxious",
   "Website": "https://github.com/janxious/MechResizer",
@@ -14,6 +14,7 @@
 
   "Settings": {
     "debug": false,
+
     "defaultMechSizeMultiplier": 0.9,
     "mechSizeMultipliers": {},
     "mechSizeMultiplierVectors": {},
@@ -21,6 +22,10 @@
     "defaultVehicleSizeMultiplier": 1,
     "vehicleSizeMultipliers": {},
     "vehicleSizeMultiplierVectors": {},
+
+    "defaultTurretSizeMultiplier": 1,
+    "turretSizeMultipliers": {},
+    "turretSizeMultiplierVectors": {},
 
     "defaultProjectileSizeMultiplier": 1,
     "projectileSizeMultipliers": {},
