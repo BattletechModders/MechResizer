@@ -29,7 +29,7 @@ Setting | Type | Default | Description
 `mechResizeMultiplierVectors` | json hash | {} | change vehicle sizes using three dimensional multipliers with format ``"chassis string": { "x": Xmulti, "y": Ymulti, "z": Zmulti }``. A very long APC might look like `"vehiclechassisdef_APC_Wheeled": {"x": 1,"y": 1, "z": 2}``
 `defaultVehicleSizeMultiplier` | float | 1 | override this to globally change all vehicle sizes in combat. Vanilla is 1
 
-The dimensions for the `*Vectors` settings are measured like: <x> - width (shoulder to shoulder), <y> - height (toes to head), <z> - depth (chest to back)
+The dimensions for the `*Vectors` settings are measured like: `<x>` - width (shoulder to shoulder), `<y>` - height (toes to head), `<z>` - depth (chest to back)
 
 ## Screenshots
 
