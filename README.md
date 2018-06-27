@@ -23,10 +23,10 @@ Downloads can be found on [Github](https://github.com/janxious/MechResizer/relea
 Setting | Type | Default | Description
 --- | --- | --- | ---
 `mechResizeMultipliers` | json hash | {} | change the size of mechs using the format `"chassis string" : multiplier`. A big locust would be like `"chassisdef_locust_LCT-1V": 15`
-`mechResizeMultiplierVectors` | json hash | {} | change mech sizes using three dimensional multipliers with format ``"chassis string": { "x": Xmulti, "y": Ymulti, "z": Zmulti }``. A very tall locust might look like `"chassisdef_locust_LCT-1V": {"x": 1,"y": 2, "z": 1}``
+`mechResizeMultiplierVectors` | json hash | {} | change mech sizes using three dimensional multipliers with format ``"chassis string": { "x": Xmulti, "y": Ymulti, "z": Zmulti }``. A very tall locust might look like `"chassisdef_locust_LCT-1V": {"x": 1,"y": 2, "z": 1}`
 `defaultMechSizeMultiplier` | float | 0.9 | override this to globally change all mech sizes in combat. Vanilla is 1.25
 `vehicleResizeMultipliers` | json hash | {} | change the size of vehicles using the format `"chassis string" : multiplier`. A big APC would be like `"vehiclechassisdef_APC_Wheeled": 3`
-`mechResizeMultiplierVectors` | json hash | {} | change vehicle sizes using three dimensional multipliers with format ``"chassis string": { "x": Xmulti, "y": Ymulti, "z": Zmulti }``. A very long APC might look like `"vehiclechassisdef_APC_Wheeled": {"x": 1,"y": 1, "z": 2}``
+`mechResizeMultiplierVectors` | json hash | {} | change vehicle sizes using three dimensional multipliers with format ``"chassis string": { "x": Xmulti, "y": Ymulti, "z": Zmulti }``. A very long APC might look like `"vehiclechassisdef_APC_Wheeled": {"x": 1,"y": 1, "z": 2}`
 `defaultVehicleSizeMultiplier` | float | 1 | override this to globally change all vehicle sizes in combat. Vanilla is 1
 
 The dimensions for the `*Vectors` settings are measured like: `<x>` - width (shoulder to shoulder), `<y>` - height (toes to head), `<z>` - depth (chest to back)
