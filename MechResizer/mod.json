@@ -1,34 +1,17 @@
 ﻿{
-  "Name": "MechResizer",
-  "Enabled": true,
+    "Name": "MechResizer",
+    "Enabled": true,
 
-  "Version": "0.5.0",
+    "Version": "1.0.0",
 
-  "Author": "janxious",
-  "Website": "https://github.com/janxious/MechResizer",
+    "Author": "janxious",
+    "Website": "https://github.com/janxious/MechResizer",
 
-  "DLL": "MechResizer.dll",
-  "DLLEntryPoint": "MechResizer.MechResizer.Init",
-  "DependsOn": [],
-  "ConflictsWith": [],
+    "DLL": "MechResizer.dll",
+    "DLLEntryPoint": "MechResizer.MechResizer.Init",
+    "DependsOn": [],
+    "ConflictsWith": [],
 
-  "Settings": {
-    "debug": false,
-
-    "defaultMechSizeMultiplier": 0.9,
-    "mechSizeMultipliers": {},
-    "mechSizeMultiplierVectors": {},
-
-    "defaultVehicleSizeMultiplier": 1,
-    "vehicleSizeMultipliers": {},
-    "vehicleSizeMultiplierVectors": {},
-
-    "defaultTurretSizeMultiplier": 1,
-    "turretSizeMultipliers": {},
-    "turretSizeMultiplierVectors": {},
-
-    "defaultProjectileSizeMultiplier": 1,
-    "projectileSizeMultipliers": {},
-    "projectileSizeMultiplierVectors": {}
-  }
+    "Settings": {
+    }
 }

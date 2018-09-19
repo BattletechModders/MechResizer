@@ -15,14 +15,8 @@ namespace MechResizer
             TurretRepresentation __instance)
         {
             Logger.Debug("turret size initialization");
-            if (ModSettings.DefaultTurretSizeMultiplier == -1f)
-            {
-                var settingFromJSON = turret.Combat.Constants.CombatValueMultipliers.TEST_MechScaleMultiplier;
-                ModSettings.DefaultTurretSizeMultiplier = settingFromJSON;
-                Logger.Debug($"loaded default size for turret: {settingFromJSON}");
-            }
             var identifier = turret.TurretDef.ChassisID;
-            var sizeMultiplier = ModSettings.VehicleSizeMultiplier(identifier);
+            var sizeMultiplier = SizeMultiplier.Get(turret.TurretDef);
             Logger.Debug($"{identifier}: {sizeMultiplier}");
             var originalLOSSourcePositions = Traverse.Create(turret).Field("originalLOSSourcePositions").GetValue<Vector3[]>();
             var originalLOSTargetPositions = Traverse.Create(turret).Field("originalLOSTargetPositions").GetValue<Vector3[]>();
