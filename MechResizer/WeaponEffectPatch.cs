@@ -10,14 +10,9 @@ namespace MechResizer
     {
         static bool Prefix(WeaponEffect __instance)
         {
-            if (ModSettings.DefaultProjectileSizeMultiplier == -1f)
-            {
-                var settingFromJSON = __instance.weapon.parent.Combat.Constants.CombatValueMultipliers.TEST_MechScaleMultiplier;
-                ModSettings.DefaultMechSizeMultiplier = settingFromJSON;
-            }
-            var projectileSizeMultiplier = ModSettings.ProjectileSizeMultiplier(__instance.weapon.Description.Id);
+            var multiplier = SizeMultiplier.Get(__instance.weapon.weaponDef);
             var ogTransform = Traverse.Create(__instance).Field("projectileTransform").GetValue<Transform>();
-            ogTransform.localScale = projectileSizeMultiplier;
+            ogTransform.localScale = multiplier;
             Traverse.Create(__instance).Field("projectileTransform").SetValue(ogTransform);
             return true;
         }

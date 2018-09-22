@@ -15,14 +15,8 @@ namespace MechResizer
             VehicleRepresentation __instance)
         {
             Logger.Debug("vehicle size initialization ");
-            if (ModSettings.DefaultVehicleSizeMultiplier == -1f)
-            {
-                var settingFromJSON = vehicle.Combat.Constants.CombatValueMultipliers.TEST_MechScaleMultiplier;
-                ModSettings.DefaultVehicleSizeMultiplier = settingFromJSON;
-                Logger.Debug($"loaded default size for vehicle: {settingFromJSON}");
-            }
             var identifier = vehicle.VehicleDef.ChassisID;
-            var sizeMultiplier = ModSettings.VehicleSizeMultiplier(identifier);
+            var sizeMultiplier = SizeMultiplier.Get(vehicle.VehicleDef);
             Logger.Debug($"{identifier}: {sizeMultiplier}");
             var originalLOSSourcePositions = Traverse.Create(vehicle).Field("originalLOSSourcePositions").GetValue<Vector3[]>();
             var originalLOSTargetPositions = Traverse.Create(vehicle).Field("originalLOSTargetPositions").GetValue<Vector3[]>();

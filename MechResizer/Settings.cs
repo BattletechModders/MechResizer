@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using BattleTech;
 using Harmony;
@@ -62,74 +63,94 @@ namespace MechResizer
         #endregion
 
         #region mech settings
-        public float defaultMechSizeMultiplier = -1f;
-        public float DefaultMechSizeMultiplier {
-            set => defaultMechSizeMultiplier = value;
-            get => defaultMechSizeMultiplier;
-        }
-
-        public Dictionary<string, float> mechSizeMultipliers { private get; set; }
-        public Dictionary<string, Vector3> mechSizeMultiplierVectors { private get; set; }
-        public Vector3 MechSizeMultiplier(string mechIdentifier)
+        public float defaultMechSizeMultiplier
         {
-            return mechSizeMultiplierVectors.TryGetValue(mechIdentifier, out var mVector) ? mVector :
-                mechSizeMultipliers.TryGetValue(mechIdentifier, out var mSimple) ? new Vector3(mSimple, mSimple, mSimple) :
-                new Vector3(defaultMechSizeMultiplier, defaultMechSizeMultiplier, defaultMechSizeMultiplier);
+            set => SizeMultiplier.AddDefault(typeof(Mech), value);
+        }
+        public Dictionary<string, float> mechSizeMultipliers
+        {
+            set => SizeMultiplier.AddSet(value);
+        }
+        public Dictionary<string, Vector3> mechSizeMultiplierVectors
+        {
+            set => SizeMultiplier.AddSet(value);
+        }
+        public Dictionary<string, Vector3> mechSizePrefabMultipliers
+        {
+            set => SizeMultiplier.AddPrefabSet(value);
         }
         #endregion
 
         #region vehicle settings
-        public float defaultVehicleSizeMultiplier = -1f;
-        public float DefaultVehicleSizeMultiplier
+        public float defaultVehicleSizeMultiplier
         {
-            set => defaultVehicleSizeMultiplier = value;
-            get => defaultVehicleSizeMultiplier;
+            set => SizeMultiplier.AddDefault(typeof(Vehicle), value);
         }
-
-        public Dictionary<string, float> vehicleSizeMultipliers { private get; set; }
-        public Dictionary<string, Vector3> vehicleSizeMultiplierVectors { private get; set; }
-        public Vector3 VehicleSizeMultiplier(string vehicleIdentifier)
+        public Dictionary<string, float> vehicleSizeMultipliers
         {
-            return vehicleSizeMultiplierVectors.TryGetValue(vehicleIdentifier, out var mVector) ? mVector :
-                vehicleSizeMultipliers.TryGetValue(vehicleIdentifier, out var mSimple) ? new Vector3(mSimple, mSimple, mSimple) :
-                new Vector3(defaultVehicleSizeMultiplier, defaultVehicleSizeMultiplier, defaultVehicleSizeMultiplier);
+            set => SizeMultiplier.AddSet(value);
+        }
+        public Dictionary<string, Vector3> vehicleSizeMultiplierVectors
+        {
+            set => SizeMultiplier.AddSet(value);
+        }
+        public Dictionary<string, Vector3> vehicleSizePrefabMultipliers
+        {
+            set => SizeMultiplier.AddPrefabSet(value);
         }
         #endregion
         
         #region turret settings
-        public float defaultTurretSizeMultiplier = -1f;
-        public float DefaultTurretSizeMultiplier
+        public float defaultTurretSizeMultiplier
         {
-            set => defaultTurretSizeMultiplier = value;
-            get => defaultTurretSizeMultiplier;
+            set => SizeMultiplier.AddDefault(typeof(Turret), value);
         }
-
-        public Dictionary<string, float> turretSizeMultipliers { private get; set; }
-        public Dictionary<string, Vector3> turretSizeMultiplierVectors { private get; set; }
-        public Vector3 TurretSizeMultiplier(string turretIdentifier)
+        public Dictionary<string, float> turretSizeMultipliers
         {
-            return turretSizeMultiplierVectors.TryGetValue(turretIdentifier, out var mVector) ? mVector :
-                turretSizeMultipliers.TryGetValue(turretIdentifier, out var mSimple) ? new Vector3(mSimple, mSimple, mSimple) :
-                new Vector3(defaultTurretSizeMultiplier, defaultTurretSizeMultiplier, defaultTurretSizeMultiplier);
+            set => SizeMultiplier.AddSet(value);
+        }
+        public Dictionary<string, Vector3> turretSizeMultiplierVectors
+        {
+            set => SizeMultiplier.AddSet(value);
+        }
+        public Dictionary<string, Vector3> turretSizePrefabMultipliers
+        {
+            set => SizeMultiplier.AddPrefabSet(value);
         }
         #endregion
 
         #region projectile settings
-        public float defaultProjectileSizeMultiplier = -1f;
-        public float DefaultProjectileSizeMultiplier
+        public float defaultProjectileSizeMultiplier
         {
-            set => defaultProjectileSizeMultiplier = value;
-            get => defaultProjectileSizeMultiplier;
+            set => SizeMultiplier.AddDefault(typeof(Weapon), value);
         }
-
-        public Dictionary<string, float> projectileSizeMultipliers { private get; set; }
-        public Dictionary<string, Vector3> projectileSizeMultiplierVectors { private get; set; }
-        public Vector3 ProjectileSizeMultiplier(string firingWeaponIdentifier)
+        public Dictionary<string, float> projectileSizeMultipliers
         {
-            return projectileSizeMultiplierVectors.TryGetValue(firingWeaponIdentifier, out var mVector) ? mVector :
-                projectileSizeMultipliers.TryGetValue(firingWeaponIdentifier, out var mSimple) ? new Vector3(mSimple, mSimple, mSimple) :
-                new Vector3(defaultProjectileSizeMultiplier, defaultProjectileSizeMultiplier, defaultProjectileSizeMultiplier);
+            set => SizeMultiplier.AddSet(value);
         }
+        public Dictionary<string, Vector3> projectileSizeMultiplierVectors
+        {
+            set => SizeMultiplier.AddSet(value);
+        }
+        public Dictionary<string, Vector3> projectileSizePrefabMultipliers
+        {
+            set => SizeMultiplier.AddPrefabSet(value);
+        }
+//        public float defaultProjectileSizeMultiplier = -1f;
+//        public float DefaultProjectileSizeMultiplier
+//        {
+//            set => defaultProjectileSizeMultiplier = value;
+//            get => defaultProjectileSizeMultiplier;
+//        }
+//
+//        public Dictionary<string, float> projectileSizeMultipliers { private get; set; }
+//        public Dictionary<string, Vector3> projectileSizeMultiplierVectors { private get; set; }
+//        public Vector3 ProjectileSizeMultiplier(string firingWeaponIdentifier)
+//        {
+//            return projectileSizeMultiplierVectors.TryGetValue(firingWeaponIdentifier, out var mVector) ? mVector :
+//                projectileSizeMultipliers.TryGetValue(firingWeaponIdentifier, out var mSimple) ? new Vector3(mSimple, mSimple, mSimple) :
+//                new Vector3(defaultProjectileSizeMultiplier, defaultProjectileSizeMultiplier, defaultProjectileSizeMultiplier);
+//        }
         #endregion
 
         #region debug settings

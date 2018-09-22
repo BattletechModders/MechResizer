@@ -15,15 +15,8 @@ namespace MechResizer
             MechRepresentation __instance)
         {
             Logger.Debug("mech size initialization");
-            if (ModSettings.DefaultMechSizeMultiplier == -1f)
-            {
-                var settingFromJSON = mech.Combat.Constants.CombatValueMultipliers.TEST_MechScaleMultiplier;
-                ModSettings.DefaultMechSizeMultiplier = settingFromJSON;
-                Logger.Debug($"loaded default size for mech: {settingFromJSON}");
-            }
-
             var identifier = mech.MechDef.ChassisID;
-            var sizeMultiplier = ModSettings.MechSizeMultiplier(identifier);
+            var sizeMultiplier = SizeMultiplier.Get(mech.MechDef.Chassis);
             Logger.Debug($"{identifier}: {sizeMultiplier}");
             var originalLOSSourcePositions = Traverse.Create(mech).Field("originalLOSSourcePositions").GetValue<Vector3[]>();
             var originalLOSTargetPositions = Traverse.Create(mech).Field("originalLOSTargetPositions").GetValue<Vector3[]>();
