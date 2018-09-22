@@ -13,5 +13,15 @@
     "ConflictsWith": [],
 
     "Settings": {
+      "defaultMechSizeMultiplier": 0.9,
+      "defaultVehicleSizeMultiplier": 1,
+      "defaultTurretSizeMultiplier": 1,
+      "defaultProjectileSizeMultiplier": 1,
+      "mechSizePrefabMultipliers": {},
+      "vehicleSizePrefabMultipliers": {},
+      "turretSizePrefabMultipliers": {},
+      "projectileSizePrefabMultipliers": {},
+
+      "debug": false
     }
 }

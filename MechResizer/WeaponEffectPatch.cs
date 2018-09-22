@@ -11,7 +11,6 @@ namespace MechResizer
         static bool Prefix(WeaponEffect __instance)
         {
             var multiplier = SizeMultiplier.Get(__instance.weapon.weaponDef);
-            //var projectileSizeMultiplier = ModSettings.ProjectileSizeMultiplier(__instance.weapon.Description.Id);
             var ogTransform = Traverse.Create(__instance).Field("projectileTransform").GetValue<Transform>();
             ogTransform.localScale = multiplier;
             Traverse.Create(__instance).Field("projectileTransform").SetValue(ogTransform);

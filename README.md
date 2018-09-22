@@ -115,7 +115,7 @@ Normal vehicles size, smaller than vanilla mechs, slenderman griffin, giganto th
 
     "defaultVehicleSizeMultiplier": 1,
     "vehicleSizeMultipliers": {
-      "vehiclechassisdef_STRIKER": 1.1
+      "vehiclechassisdef_STRIKER": 4
     },
     "vehicleSizeMultiplierVectors": {
       "vehiclechassisdef_GALLEON": { "x": 2, "y": 4, "z": 2 }
